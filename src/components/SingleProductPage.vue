@@ -1,7 +1,7 @@
 <template>
-  <p>{{product.title}}</p>
-    <p>Price: {{product.price}}</p>
-    <p>{{snippet}}</p>
+  <h3>{{product.title}}</h3>
+    <p class="display-4">Price: {{product.price}}</p>
+    <p></p>
     <img width="200" height="200" 
     :src="`${product.image}`" 
     :alt="`${product.title}`">
@@ -13,12 +13,10 @@ export default {
     props: ["product"],
     setup(props) {
 
-        const snippet = computed(()=>{
-            return props.product.description.substr(0,50) + "..."
-        })
+        
 
 
-        return {snippet}
+        return {}
     }
 
 }

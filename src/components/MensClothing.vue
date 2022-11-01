@@ -1,26 +1,19 @@
 <template>
-  <div class="container-fluid p-3 bg-light border">
-    <h3>Products List</h3>
-
-    <ProductsNav/>
-    <div v-for="product in items" :key="product.id">
+  <div v-for="product in items" :key="product.id">
       <SingleProductPage :product="product" />
     </div>
-    
-  </div>
 </template>
 
 <script>
 import { onMounted, ref } from "@vue/runtime-core";
 import SingleProductPage from "./SingleProductPage.vue";
-import ProductsNav from "./ProductsNav.vue";
 export default {
-  components: { SingleProductPage, ProductsNav },
+    components: { SingleProductPage },
   setup() {
     let items = ref([]);
 
     const getProducts = async () => {
-      return fetch("https://fakestoreapi.com/products/")
+      return fetch(`https://fakestoreapi.com/products/category/men's clothing`)
         .then((res) => res.json())
       }
 
@@ -35,7 +28,15 @@ export default {
 
     return {items, getProducts };
   },
-};
+
+
+
+
+    
+
+}
 </script>
 
-<style></style>
+<style>
+
+</style>
