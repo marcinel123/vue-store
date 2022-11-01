@@ -1,9 +1,14 @@
 <template>
-    <h3>Products List</h3>
     <ProductsNav/>
-  <div v-for="product in items" :key="product.id">
-    <SingleProductPage :product="product" />
-  </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12" v-for="product in items" :key="product.id">
+          <SingleProductPage :product="product" />
+
+      </div>
+      </div>
+      
+    </div>
 </template>
 
 <script>

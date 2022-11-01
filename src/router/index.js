@@ -5,6 +5,8 @@ import AboutUsPage from "../components/AboutUsPage"
 import ContactPage from "../components/ContactPage"
 import MensClothing from "../components/MensClothing"
 import JeweleryPage from "../components/JeweleryPage"
+import ElectronicsPage from "../components/ElectronicsPage"
+import WomensClothing from "../components/WomensClothing"
 
 const routes = [
     {
@@ -41,6 +43,18 @@ const routes = [
         path: "/jewelery",
         name: "JeweleryPage",
         component: JeweleryPage
+
+    },
+    {
+        path: "/womens",
+        name: "WomensClothing",
+        component: WomensClothing
+
+    },
+    {
+        path: "/electronics",
+        name: "ElectronicsPage",
+        component: ElectronicsPage
 
     }
 

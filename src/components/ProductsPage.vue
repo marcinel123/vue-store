@@ -1,12 +1,17 @@
 <template>
   <div class="container-fluid p-3 bg-light border">
-    <h3>Products List</h3>
-
-    <ProductsNav/>
-    <div v-for="product in items" :key="product.id">
-      <SingleProductPage :product="product" />
+    <ProductsNav />
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div
+          class="col-sm-12 col-md-6"
+          v-for="product in items"
+          :key="product.id"
+        >
+          <SingleProductPage :product="product" />
+        </div>
+      </div>
     </div>
-    
   </div>
 </template>
 
@@ -20,20 +25,18 @@ export default {
     let items = ref([]);
 
     const getProducts = async () => {
-      return fetch("https://fakestoreapi.com/products/")
-        .then((res) => res.json())
-      }
+      return fetch("https://fakestoreapi.com/products/").then((res) =>
+        res.json()
+      );
+    };
 
-    onMounted(()=>{
+    onMounted(() => {
       getProducts().then((products) => {
-          items.value = products
-        });
-    })
+        items.value = products;
+      });
+    });
 
-
-    
-
-    return {items, getProducts };
+    return { items, getProducts };
   },
 };
 </script>

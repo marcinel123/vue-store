@@ -1,14 +1,22 @@
 <template>
-  <div v-for="product in items" :key="product.id">
-      <SingleProductPage :product="product" />
+    <ProductsNav/>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12" v-for="product in items" :key="product.id">
+          <SingleProductPage :product="product" />
+
+      </div>
+      </div>
+      
     </div>
 </template>
 
 <script>
 import { onMounted, ref } from "@vue/runtime-core";
 import SingleProductPage from "./SingleProductPage.vue";
+import ProductsNav from "./ProductsNav.vue";
 export default {
-    components: { SingleProductPage },
+    components: { SingleProductPage, ProductsNav },
   setup() {
     let items = ref([]);
 
