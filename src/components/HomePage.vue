@@ -1,20 +1,21 @@
 <template>
-    Hello! My name is {{name}} and my age is {{age}}
-    </template>
+
+  Home Page
+  
+</template>
+
+<script>
+import { ref } from "@vue/reactivity";
+import ProductsPage from "./ProductsPage.vue";
+
+export default {
+  name: "HomePage",
+  components: { },
+  setup() {
     
-    <script>
-    
-    export default {
-      name: 'HomePage',
-      setup() {
-        
-        return {}
-      }
-      
-    }
-    </script>
-    
-    <style>
-    
-    </style>
-    
+    return { };
+  },
+};
+</script>
+
+<style></style>
