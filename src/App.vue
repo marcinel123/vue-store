@@ -1,15 +1,12 @@
 <template>
-  <nav class="navbar navbar-light p-4" 
-  style="background-color: gray; color: white; font-size: 25px;">
+  <nav
+    class="navbar navbar-light navbar-expand-md p-4"
+    style="background-color: lightgray; color: white; font-size: 25px"
+  >
     <router-link class="navbar-brand" to="/">
       <span class="fw-bold text-secondary"> VUE-STORE </span>
     </router-link>
-    <router-link class="nav-link" to="/">Home</router-link>
-    <router-link class="nav-link" to="/products">Products</router-link>
-    <router-link class="nav-link" to="/aboutus">About Us</router-link>
-    <router-link class="nav-link" to="/contact">Contact</router-link>
-    <div id="main-nav" class="collapse navbar-collapse justify-content-end align-center">
-    </div>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -18,6 +15,27 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <div
+      id="main-nav"
+      class="collapse navbar-collapse justify-content-end align-center"
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <router-link class="nav-link" to="/">Home</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/products">Products</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/aboutus">About Us</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/contact">Contact</router-link>
+        </li>
+      </ul>
+    </div>
+    
   </nav>
   <router-view />
 </template>
