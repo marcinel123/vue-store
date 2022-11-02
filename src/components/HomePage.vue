@@ -1,6 +1,6 @@
 <template>
 
-  Home Page
+  Home Page by Ela :)
   
 </template>
 
