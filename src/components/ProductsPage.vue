@@ -1,14 +1,14 @@
 <template>
-  <div class="container-fluid p-3 bg-light border">
+  <div class="container-fluid p-3 border">
     <ProductsNav />
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div
-          class="col-sm-12 col-md-6"
+          class="col-sm-9 col-md-6 col-lg-4"
           v-for="product in items"
           :key="product.id"
         >
-          <SingleProductPage :product="product" />
+          <SingleProductCard :product="product" />
         </div>
       </div>
     </div>
@@ -17,10 +17,10 @@
 
 <script>
 import { onMounted, ref } from "@vue/runtime-core";
-import SingleProductPage from "./SingleProductPage.vue";
+import SingleProductCard from "./SingleProductCard.vue";
 import ProductsNav from "./ProductsNav.vue";
 export default {
-  components: { SingleProductPage, ProductsNav },
+  components: { SingleProductCard, ProductsNav },
   setup() {
     let items = ref([]);
 
