@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid p-3 border">
+  <div class="container-fluid p-3">
     <ProductsNav />
     <div class="container-fluid">
       <div class="row justify-content-center">

@@ -1,5 +1,5 @@
 <template>
-  <div class="card border-0" style="width: 22rem; height: 24rem; margin-bottom: 15px;">
+  <div class="card border-1" style="width: 22rem; height: 24rem; margin-bottom: 15px;">
     <img
     style="height: 50%; width: 50%; margin: 0 auto; padding-top: 5px;"
       
@@ -7,8 +7,8 @@
       class="card-img-top"
       :alt="`${product.title}`"
     />
-    <div class="card-body text-end d-flex flex-column">
-      <h5 class="card-title">{{ product.title }} - {{product.id}}</h5>
+    <div class="card-body text-center d-flex flex-column">
+      <h5 class="card-title">{{ product.title }}</h5>
       <p class="card-text">
         {{ shortDescription }}
       </p>
