@@ -45,6 +45,6 @@ export default {
 
 <style>
 body {
-  margin: 10px;
+  margin: 3px;
 }
 </style>

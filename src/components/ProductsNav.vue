@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-light navbar-expand-md">
-    <div class="container-fluid mt-3 mb-3 p-3">
+  <nav class="navbar navbar-light navbar-expand-md ">
+    <div class="container-fluid mt-3 mb-1 p-3">
 
       <div class="dropdown">
         <button
@@ -36,7 +36,7 @@
       </div>
 
       <div class="category-nav collapse navbar-collapse" id="navbarNav">
-        <ul class="container-fluid navbar-nav d-flex justify-content-around ">
+        <ul class="container-fluid navbar-nav d-flex justify-content-around border-bottom ">
           <li><router-link class="nav-link" to="/mens"> Men's clothing </router-link></li>
           <li><router-link class="nav-link" to="/jewelery"> Jewelery </router-link></li>
           <li><router-link class="nav-link" to="electronics"> Electronics </router-link></li>
