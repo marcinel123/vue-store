@@ -4,11 +4,9 @@
     <section class="container-fluid p-3 d-flex">
       <span
         >Filters:
-        <select class="form-select" aria-label="Filters" @change="getValue">
-          <option selected>Choose your category</option>
-          <option value="men's clothing">
-            Men's clothing
-          </option>
+        <select class="form-select" aria-label="Filters" @change="setCategory">
+          <option value="all" selected>Choose your category</option>
+          <option value="men's clothing">Men's clothing</option>
           <option value="jewelery">Jewelery</option>
           <option value="electronics">Electronics</option>
           <option value="women's clothing">Women's clothing</option>
@@ -16,8 +14,8 @@
       </span>
       <span
         >Sort by:
-        <select class="form-select" aria-label="Sort">
-          <option selected>Sort by</option>
+        <select class="form-select" aria-label="Sort" @change="sortByPrice">
+          <option value="0" selected>Sort by</option>
           <option value="1">Price (High to low)</option>
           <option value="2">Price (Low to high)</option>
           <option value="3">Rate (Highest to lowest)</option>
@@ -41,7 +39,7 @@
 </template>
 
 <script>
-import { onMounted, onUpdated, ref } from "@vue/runtime-core";
+import { onMounted, ref } from "@vue/runtime-core";
 import SingleProductCard from "./SingleProductCard.vue";
 import ProductsNav from "./ProductsNav.vue";
 import mockData from "../mockData.json";
@@ -50,22 +48,56 @@ export default {
   setup() {
     let items = ref([]);
 
-    const getValue = (e) => {
-      items.value = mockData
-      items.value = items.value.filter(
-        (item) => { 
-          return item.category === e.target.value}
-      );
+    const setCategory = (e) => {
+      items.value = mockData;
+      if (e.target.value === "all") {
+        return items.value;
+      } else {
+        items.value = items.value.filter((item) => {
+          return item.category === e.target.value;
+        });
+      }
+    };
+
+    const sortByPrice = (e) => {
+      switch (e.target.value) {
+        
+        case "1":
+          items.value = mockData;
+
+          items.value = items.value.sort((a, b) => {
+            return b.price - a.price;
+          });
+          break;
+
+        case "2":
+          items.value = mockData;
+          items.value = items.value.sort((a, b) => {
+            return a.price - b.price;
+          });
+          break;
+        case "3":
+          items.value = mockData;
+          items.value = items.value.sort((a, b) => {
+            return b.rating.rate - a.rating.rate;
+          });
+          break;
+        case "4":
+          items.value = mockData;
+          items.value = items.value.sort((a, b) => {
+            return a.rating.rate - b.rating.rate;
+          });
+          break;
+        default:
+          items.value = mockData;
+      }
     };
 
     onMounted(() => {
       items.value = mockData;
     });
 
-
-
-
-    return { items, getValue };
+    return { items, setCategory, sortByPrice };
   },
 };
 </script>
