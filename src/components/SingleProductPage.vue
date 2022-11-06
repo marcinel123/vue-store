@@ -1,26 +1,20 @@
 <template>
-  <h3>{{product.id}} - {{product.title}}</h3>
-    <img width="200" height="200" 
-    :src="`${product.image}`" 
-    :alt="`${product.title}`">
-    <p class="display-4">Price: {{product.price}}</p>
+  <div class="container-fluid p-3 bg-light border">
+    <ProductsNav />
+    Pageeee {{ id.params.id }}
+  </div>
 </template>
 
 <script>
-
+import { useRoute } from "vue-router";
 export default {
-    props: ["product"],
-    setup() {
+  setup() {
+    const id = useRoute();
+    console.log(id.params.id);
 
-        
-
-
-        return {}
-    }
-
-}
+    return { id };
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

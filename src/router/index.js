@@ -7,6 +7,7 @@ import MensClothing from "../components/MensClothing"
 import JeweleryPage from "../components/JeweleryPage"
 import ElectronicsPage from "../components/ElectronicsPage"
 import WomensClothing from "../components/WomensClothing"
+import SingleProductPage from "../components/SingleProductPage"
 
 const routes = [
     {
@@ -55,6 +56,12 @@ const routes = [
         path: "/electronics",
         name: "ElectronicsPage",
         component: ElectronicsPage
+
+    },
+    {
+        path: "/products/:id",
+        name: "SingleProductPage",
+        component: SingleProductPage
 
     }
 

@@ -1,10 +1,10 @@
 <template>
   <nav
     class="navbar navbar-light navbar-expand-md p-4"
-    style="background-color: lightgray; color: white; font-size: 25px"
+    style="background-color: white; color: black; font-size: 25px"
   >
-    <router-link class="navbar-brand" to="/">
-      <span class="fw-bold text-secondary"> VUE-STORE </span>
+    <router-link class="navbar-brand " to="/">
+      <span class="fw-bold text-secondary display-6"> VUE-STORE </span>
     </router-link>
 
     <button
@@ -21,9 +21,6 @@
       class="collapse navbar-collapse justify-content-end align-center"
     >
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <router-link class="nav-link" to="/">Home</router-link>
-        </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/products">Products</router-link>
         </li>
@@ -48,6 +45,6 @@ export default {
 
 <style>
 body {
-  margin: 10px;
+  margin: 3px;
 }
 </style>
