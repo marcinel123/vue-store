@@ -1,6 +1,6 @@
 <template>
   <ProductsNav />
-  <div class="container-fluid p-3">
+  <div class="main-container container-fluid p-3">
     <section class="container-fluid p-3 d-flex">
       <span
         >Filters:
@@ -15,7 +15,7 @@
       <span
         >Sort by:
         <select class="form-select" aria-label="Sort" @change="sortByPrice">
-          <option value="0" selected>Sort by</option>
+          <option selected>Sort by</option>
           <option value="1">Price (High to low)</option>
           <option value="2">Price (Low to high)</option>
           <option value="3">Rate (Highest to lowest)</option>
@@ -47,6 +47,8 @@ export default {
   components: { SingleProductCard, ProductsNav },
   setup() {
     let items = ref([]);
+   
+      
 
     const setCategory = (e) => {
       items.value = mockData;
@@ -58,13 +60,14 @@ export default {
         });
       }
     };
+    onMounted(() => {
+      items.value = mockData;
+    });
 
     const sortByPrice = (e) => {
       switch (e.target.value) {
-        
         case "1":
           items.value = mockData;
-
           items.value = items.value.sort((a, b) => {
             return b.price - a.price;
           });
@@ -89,17 +92,20 @@ export default {
           });
           break;
         default:
-          items.value = mockData;
       }
     };
-
-    onMounted(() => {
-      items.value = mockData;
-    });
 
     return { items, setCategory, sortByPrice };
   },
 };
 </script>
 
-<style></style>
+<style scoped>
+.main-container {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(252, 252, 252),
+    rgb(248, 248, 242)
+  );
+}
+</style>
