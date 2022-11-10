@@ -47,8 +47,6 @@ export default {
   components: { SingleProductCard, ProductsNav },
   setup() {
     let items = ref([]);
-   
-      
 
     const setCategory = (e) => {
       items.value = mockData;
