@@ -8,6 +8,7 @@ import JeweleryPage from "../components/JeweleryPage"
 import ElectronicsPage from "../components/ElectronicsPage"
 import WomensClothing from "../components/WomensClothing"
 import SingleProductPage from "../components/SingleProductPage"
+import BasketPage from "../components/BasketPage"
 
 const routes = [
     {
@@ -56,6 +57,12 @@ const routes = [
         path: "/electronics",
         name: "ElectronicsPage",
         component: ElectronicsPage
+
+    },
+    {
+        path: "/basket",
+        name: "BasketPage",
+        component: BasketPage
 
     },
     {

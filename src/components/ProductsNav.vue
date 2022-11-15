@@ -43,12 +43,19 @@
           <li><router-link class="nav-link" to="womens"> Women's clothing </router-link></li>
         </ul>
       </div>
+      
     </div>
   </nav>
 </template>
 
 <script>
-export default {};
+
+export default {
+  props: [],
+
+
+
+};
 </script>
 
 <style>

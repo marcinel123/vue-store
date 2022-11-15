@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div  id="carousel-clothes" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div style="max-height: 50vh" class="carousel-inner">
+      <div style="max-height: 80vh" class="carousel-inner">
         <div class="carousel-item active">
           <img
             src="../images/photo1.jpg"
