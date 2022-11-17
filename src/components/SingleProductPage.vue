@@ -22,7 +22,11 @@
           <h2 class="p2">{{ item.title }}</h2>
           <p class="mt-2 p-2">Category: {{ item.category }}</p>
           <p class="mt-2 p-2 display-6">Price: {{ item.price }}$</p>
-          <button :disabled="checked" @click="addItem" class="item-btn m-3 p-2 btn btn-lg btn-dark">
+          <button
+            disabled="true"
+            @click="addItem"
+            class="item-btn m-3 p-2 btn btn-lg btn-dark"
+          >
             Add to basket
           </button>
           <h4 class="p-3 mt-4 m-2">Available sizes:</h4>
@@ -87,14 +91,14 @@ import { ref } from "@vue/reactivity";
 import { useRoute } from "vue-router";
 import { onMounted } from "@vue/runtime-core";
 import ProductsNav from "./ProductsNav.vue";
-import router from '@/router';
+import router from "@/router";
 export default {
   components: { ProductsNav },
   setup() {
     const id = useRoute();
     let item = ref([]);
     let selectedSize = ref(null);
-    let checked = ref(true)
+    let checked = ref(true);
 
     const getProduct = async () => {
       return fetch(`https://fakestoreapi.com/products/${id.params.id}`).then(
@@ -110,6 +114,9 @@ export default {
           item.value.category === "electronics" ||
           item.value.category === "jewelery"
         ) {
+          const btn = document.querySelector(".item-btn");
+          btn.disabled = false;
+
           document.querySelector("h4").style.display = "none";
           const spans = document.querySelectorAll(".checkbox_span");
 
@@ -121,33 +128,24 @@ export default {
       });
     });
 
-    const checkboxChecked = (e) => {
+
+      const checkboxChecked = (e) => {
+        const btn = document.querySelector(".item-btn");
+        btn.disabled = !btn.disabled;
+
+        const checkboxes = document.querySelectorAll(".checkbox_size");
+
+        let i;
+        for (i = 0; i < checkboxes.length; i++) {
+          if (checkboxes[i].value !== e.target.value) {
+            checkboxes[i].checked = false;
+            checkboxes[i].disabled = !checkboxes[i].disabled;
+          }
+        }
+
+        selectedSize = e.target.value;
+      };
     
-      console.log(checked.value)
-      const btn = document.querySelector(".item-btn")
-      console.log(btn.disabled)
-      btn.disabled = !btn.disabled
-
-      // finished here with size btn
-      
-
-      const checkboxes = document.querySelectorAll(".checkbox_size");
-
-      let i;
-      for (i = 0; i < checkboxes.length; i++) {
-        if (checkboxes[i].value !== e.target.value) {
-          checkboxes[i].checked = false;
-        } 
-        // if (checkboxes[i].checked == false) {
-        //   btn.disabled = true
-        // }
-      }
-      
-      selectedSize = e.target.value;
-      console.log(e.target)
-      console.log(btn.disabled)
-      
-    };
 
     const addItem = () => {
       let newItem = {
@@ -159,18 +157,26 @@ export default {
       fetch(`http://localhost:3000/basket/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newItem)
-      }).then(()=>{router.push('/basket')})
+        body: JSON.stringify(newItem),
+      }).then(() => {
+        router.push("/basket");
+      });
     };
 
-    
-
-    return {checked, getProduct, id, item, checkboxChecked, addItem, selectedSize };
+    return {
+      checked,
+      getProduct,
+      id,
+      item,
+      checkboxChecked,
+      addItem,
+      selectedSize,
+    };
   },
 };
 </script>
 
-<style>
+<style scoped>
 .photo {
   width: 100%;
   height: auto;

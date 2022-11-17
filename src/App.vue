@@ -21,7 +21,7 @@
       class="collapse navbar-collapse justify-content-end align-center"
     >
       <ul class="navbar-nav">
-        <li class="nav-item"><router-link to="/basket"> Basket </router-link></li>
+        <li class="nav-item me-2"><router-link to="/basket"><img src="./images/cart.png"/></router-link></li>
         <li class="nav-item">
           <router-link class="nav-link" to="/products">Products</router-link>
         </li>
