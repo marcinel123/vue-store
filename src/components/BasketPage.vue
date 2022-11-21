@@ -4,10 +4,10 @@
   </div>
   <div v-show="basketItems.length > 0">
     <div v-for="item in basketItems" :key="item.id">
-      <div class="container-md d-flex flex-row p-2 m-5 justify-content" >
+      <div class="container flex-column flex-md-row d-inline-flex d-md-flex p-2 m-5 border-bottom w-75" >
         <img class="photo" :src="`${item.image}`" />
-        <div class="container-fluid d-flex flex-column align-items">
-        <div class="d-flex flex-fill flex-column m-1 p-1">
+        <div class="container d-flex flex-column align-items">
+        <div class="d-flex flex-column m-1 p-1">
           <h6>{{ item.title }}</h6>
         </div>
         <div class="d-flex">
@@ -21,7 +21,7 @@
         </div>
       </div>
       </div>
-      <button class="ms-auto p-2 btn btn-sm btn-light" @click="removeItem(item.id)">X</button>
+      <button class="ms-md-auto p-2 btn btn-sm btn-light" @click="removeItem(item.id)">X</button>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@ export default {
 }
 
 .btn {
-  height: 30px;
+  height: auto;
   width: auto;
 }
 

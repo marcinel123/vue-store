@@ -143,7 +143,7 @@ export default {
           }
         }
 
-        selectedSize = e.target.value;
+        selectedSize = e.target.value.toUpperCase();
       };
     
 
@@ -152,7 +152,7 @@ export default {
         title: item.value.title,
         price: item.value.price,
         image: item.value.image,
-        size: selectedSize,
+        size: selectedSize
       };
       fetch(`http://localhost:3000/basket/`, {
         method: "POST",

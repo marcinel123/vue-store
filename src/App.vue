@@ -4,7 +4,7 @@
     style="background-color: white; color: black; font-size: 25px"
   >
     <router-link class="navbar-brand" to="/">
-      <span class="fw-bold text-secondary display-6"> VUE-STORE </span>
+      <span class="logo fw-bold text-secondary display-6"> VUE-STORE </span>
     </router-link>
 
     <button
@@ -21,7 +21,9 @@
       class="collapse navbar-collapse justify-content-end align-center"
     >
       <ul class="navbar-nav">
-        <li class="nav-item me-2"><router-link to="/basket"><img src="./images/cart.png"/></router-link></li>
+        <li class="nav-item me-2">
+          <router-link to="/basket"><img src="./images/cart.png"/></router-link>
+        </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/products">Products</router-link>
         </li>
@@ -46,5 +48,9 @@ export default {
 <style>
 body {
   margin: 3px;
+}
+
+.logo {
+  filter: drop-shadow(0 0 0.75rem rgb(198, 117, 133))
 }
 </style>
