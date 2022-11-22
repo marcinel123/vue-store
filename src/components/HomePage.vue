@@ -90,7 +90,7 @@
         <h5>You can call us anytime</h5>
         <p>Monday-Sunday 9.00-18.00</p>
         <p>Phone: 555-555-5555</p>
-        <p>{{ email }}</p>
+        
       </div>
     </div>
   </div>
@@ -107,11 +107,13 @@ export default {
 
     const emailValid = (e)=>{
       const signupBtn = document.querySelector(".signup-btn")
+      const signupAlert = document.querySelector(".signup-alert")
       if(e.target.value.includes("@")) {
         signupBtn.disabled = false
+        signupAlert.innerText = ""
       } else {
-        const signupAlert = document.querySelector(".signup-alert")
         signupAlert.innerText = "Please enter a valid email address."
+        signupAlert.style.color = "red"
         signupBtn.disabled = true
       }
     }

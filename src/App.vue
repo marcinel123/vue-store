@@ -7,6 +7,19 @@
       <span class="logo fw-bold text-secondary display-6"> VUE-STORE </span>
     </router-link>
 
+    <input
+      class="search-input border-0 border-bottom"
+      type="search"
+      placeholder="search..."
+      value=""
+      @input="search"
+    />
+    <div>
+      <ul class="result">
+        <li v-for="item in results" :key="item.id">{{ item.title }}</li>
+      </ul>
+    </div>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -22,7 +35,9 @@
     >
       <ul class="navbar-nav">
         <li class="nav-item me-2">
-          <router-link to="/basket"><img src="./images/cart.png"/></router-link>
+          <router-link to="/basket"
+            ><img src="./images/cart.png"
+          /></router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/products">Products</router-link>
@@ -40,8 +55,25 @@
 </template>
 
 <script>
+import mockData from "./mockData.json";
+import { ref } from "@vue/reactivity";
 export default {
   name: "App",
+
+  setup() {
+    let data = ref([]);
+    data.value = mockData;
+    const results = ref([]);
+
+    const search = (e) => {
+      const filteredData = data.value.filter((result) => {
+        return result.title.toLowerCase().includes(e.target.value);
+      });
+      results.value = filteredData;
+    };
+
+    return { data, search, results };
+  },
 };
 </script>
 
@@ -51,6 +83,6 @@ body {
 }
 
 .logo {
-  filter: drop-shadow(0 0 0.75rem rgb(198, 117, 133))
+  filter: drop-shadow(0 0 0.75rem rgb(198, 117, 133));
 }
 </style>
