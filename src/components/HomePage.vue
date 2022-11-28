@@ -50,11 +50,13 @@
       <h2><strong>Are you already our client?</strong></h2>
       <p>You can receive a 25% discount for your next order!</p>
       <span>If you sign up for our newsletter!</span>
-      <div class="d-flex flex-column align-items-center justify-content-center input-group m-2">
+      <div
+        class="d-flex flex-column align-items-center justify-content-center input-group m-2"
+      >
         <form @submit.prevent>
           <label for="email"></label>
           <input
-          @change="emailValid"
+            @change="emailValid"
             id="email"
             class="email_input border-0"
             type="email"
@@ -87,10 +89,9 @@
         <a class="link" href="#">Covid Information</a>
       </div>
       <div class="d-flex flex-column">
-        <h5>You can call us anytime</h5>
+        <h5>You can call us:</h5>
         <p>Monday-Sunday 9.00-18.00</p>
         <p>Phone: 555-555-5555</p>
-        
       </div>
     </div>
   </div>
@@ -105,18 +106,18 @@ export default {
   setup() {
     const email = ref("");
 
-    const emailValid = (e)=>{
-      const signupBtn = document.querySelector(".signup-btn")
-      const signupAlert = document.querySelector(".signup-alert")
-      if(e.target.value.includes("@")) {
-        signupBtn.disabled = false
-        signupAlert.innerText = ""
+    const emailValid = (e) => {
+      const signupBtn = document.querySelector(".signup-btn");
+      const signupAlert = document.querySelector(".signup-alert");
+      if (e.target.value.includes("@")) {
+        signupBtn.disabled = false;
+        signupAlert.innerText = "";
       } else {
-        signupAlert.innerText = "Please enter a valid email address."
-        signupAlert.style.color = "red"
-        signupBtn.disabled = true
+        signupAlert.innerText = "Please enter a valid email address.";
+        signupAlert.style.color = "red";
+        signupBtn.disabled = true;
       }
-    }
+    };
 
     return { email, emailValid };
   },
