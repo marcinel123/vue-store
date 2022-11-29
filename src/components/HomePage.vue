@@ -1,40 +1,45 @@
 <template>
   <div class="container-fluid">
-    <div
-      id="carousel-clothes"
-      class="carousel slide carousel-fade"
-      data-bs-ride="carousel"
-    >
-      <div style="max-height: 80vh" class="mb-1 carousel-inner">
-        <div class="carousel-item active">
-          <img src="../images/photo1.jpg" class="d-block w-100" alt="clothes" />
-        </div>
-        <div class="carousel-item">
-          <img src="../images/photo2.jpg" class="d-block w-100" alt="clothes" />
-        </div>
-        <div class="carousel-item">
-          <img src="../images/photo3.jpg" class="d-block w-100" alt="clothes" />
-        </div>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="../images/us1.jpg.jpg" class="d-block w-100" alt="clothes">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome at your very first VUE store!</h5>
+        <p>You should definitely checkout all the features!</p>
       </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carousel-clothes"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carousel-clothes"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="../images/us2.jpg.jpg" class="d-block w-100" alt="clothes">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 style="color: white">I hope you like it!</h5>
+        <p style="color: white">The store has been build using JavaScript, VUE and Bootstrap 5.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../images/us3.jpg.jpg" class="d-block w-100" alt="clothes">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Hope to hear from you soon!</h5>
+        <p>Please do not order too many things at one time :)</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+   
 
     <div class="row">
       <div class="col-6">

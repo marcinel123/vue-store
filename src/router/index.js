@@ -9,6 +9,7 @@ import ElectronicsPage from "../components/ElectronicsPage"
 import WomensClothing from "../components/WomensClothing"
 import SingleProductPage from "../components/SingleProductPage"
 import BasketPage from "../components/BasketPage"
+import NotFoundPage from "../components/NotFoundPage"
 
 const routes = [
     {
@@ -69,6 +70,12 @@ const routes = [
         path: "/products/:id",
         name: "SingleProductPage",
         component: SingleProductPage
+
+    },
+    {
+        path: "/:notfound(.*)",
+        name: "NotFoundPage",
+        component: NotFoundPage
 
     }
 
