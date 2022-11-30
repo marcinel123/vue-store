@@ -7,7 +7,7 @@
       <span class="logo fw-bold text-secondary display-6"> VUE-STORE </span>
     </router-link>
 
-    <div class="search d-none d-md-block">
+    <div class="search d-none d-lg-block">
       <input
         class="search-input border-0 border-bottom"
         type="search"
