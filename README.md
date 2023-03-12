@@ -2,7 +2,7 @@
 
 Hello there :)
 
-Welcome to my first personal Vue-Store. It has been made using Vue.js (ver. 3, composition api). Also I used Json server for keeping data from (https://fakestoreapi.com/).
+Welcome to my first personal Vue-Store. It has been made using Vue.js (ver. 3, composition api and vue router). Also I used Json server for keeping data from (https://fakestoreapi.com/).
 
 ## Tech stack
 
